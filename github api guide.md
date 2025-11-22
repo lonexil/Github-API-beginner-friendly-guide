@@ -36,3 +36,38 @@ A jSON object with ;
 - number of repos
 - followers
 - etc..
+
+## 5. List a User's public repositories
+``` GET/users/(username)/repos ```
+
+Example
+``` curl https://api.github.com/users/octocat/repos/-H "Authorization:Bearer YOUR_TOKEN ```
+
+Response
+Returns a lsit of repos with:
+- name 
+- descripton
+- visbility
+- done uRLs
+- stars
+- languages
+## 6. Create a new repository:
+``` POST/users/repos ```
+Body example
+
+```{
+    "name":"my _new_repo",
+    "description":"my first repo created using the Github API "
+    "private":false"
+} 
+```
+
+Example (cURL)
+
+``` CURL -X POST https://api.github.com/users/repos/-H "Authorization: Bearer YOUR_TOKEN"/
+-H "content-Type: application/json"/
+-d '{"name":"my-new-repo","private":false"}'
+```
+If the token has the right permission, the new repo will be created immediately.
+
+## 7. 
