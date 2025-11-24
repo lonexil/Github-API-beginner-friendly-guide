@@ -70,4 +70,35 @@ Example (cURL)
 ```
 If the token has the right permission, the new repo will be created immediately.
 
-## 7. 
+## 7. Create a New Issue In the Repository
+
+``` POST/repos{owner}/repo/issues```
+
+Example Body:
+
+```
+{
+    "title":"Bug: login not working",
+    "body":"steps to reproduce..."
+} 
+```
+
+Example request
+
+``` 
+curl -x POST https://api.github.com/repos/octocat/hello-world/issues/ -H "Authorization: Bearer YOUR_TOKEN/ -d '{"title":"Bug: login not working"}'
+
+```
+
+## 8. Common Github API Status Codes
+
+|status code|meaning|
+|----------|-------------|
+|200 OK|Request suceeded|
+|201 created| Resource sucessffully created|
+|400 Bad request|Your input is invalid|
+|401 Unauthorized|Token missing/expired|
+|403 forbidden|Token lacks permission(common with repos)|
+|404 Not found|Wrong repo or username|
+|422 unprocessed entity |missing required fields|
+|500+|Github-side server error|
