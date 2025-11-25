@@ -102,3 +102,23 @@ curl -x POST https://api.github.com/repos/octocat/hello-world/issues/ -H "Author
 |404 Not found|Wrong repo or username|
 |422 unprocessed entity |missing required fields|
 |500+|Github-side server error|
+
+## 9. Rate limiting
+Github limits the number of API calls you can make.
+
+- Unauthenticated : 60 requests per hour
+- Authenticated : much higheer (varies by token type)
+
+To check your remaining limit 
+
+``` GET https://api.github.com/rate_limit ```
+
+## 10. Tools you can use 
+
+- postman - easiest for beginner
+- cURL - for command line testing
+- Swagger/openAPI - if documenting an API
+- Vscode + REST client extension
+
+## Conclusion
+For a more detailed and advance guide for the Github API , you should check out official Github API docs. At ``` https://docs.github.com/en/rest ```
